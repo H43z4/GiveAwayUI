@@ -1,0 +1,69 @@
+<div class="container-fluid login">
+  <nav class="navbar">
+    <a class="navbar-brand" href="master/dashboard">
+      <img src="../../assets/logo.png" alt="Logo">
+    </a>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="master/dashboard">
+          <img src="../../assets/pos.png" alt="DASHBOARD">
+          DASHBOARD
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="register">
+          <img src="../../assets/profile.png" alt="Register">
+          Register
+        </a>
+      </li>
+    </ul>
+  </nav>
+  
+  <div class="row">
+    <!-- <div class="col-lg-7 col-md-6 col-sm-12 order-lg-first">
+    </div> -->
+    <div class="col-lg-4 col-md-5 col-sm-12 order-lg-1 order-md-1 order-sm-2 login-side">
+      <div class="login-side-content">
+        <img src="../../assets/logo.png" class="logo w-100" alt="">
+<!-- 
+        <div class="login-text">
+          <p class="heading-text-login mb-0">Login to your account</p>
+          <p class="desc-text-login mb-0">To continue this service, you have to login into your account.</p>
+        </div> -->
+
+        <form action="javascript:;" class="auth-forms w-100" autocomplete="off" [formGroup]="form" (ngSubmit)="submit()">
+          <div class="form-floating">
+              <label for="name">Username</label>
+            <input type="email" class="form-control" formControlName="name" id="name" id="name" placeholder="Username">
+          </div>
+          <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger p-1 mb-0">
+              <div *ngIf="f['name'].errors && f['name'].errors['required']">Username is required.</div>
+              <div *ngIf="f['name'].errors && f['name'].errors['minlength']">Username should be 5 character.</div>
+          </div>
+          <div class="form-floating mt-2">
+              <label for="floatingPassword">Password</label>
+            <input type="password" class="form-control pass-field" formControlName="password" id="password" placeholder="Password">
+            <!-- <p class="mb-0 show-pass">show</p> -->
+          </div>
+          <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger p-1 mb-0">
+              <div *ngIf="f['password'].errors && f['password'].errors['required']">Password is required.</div>
+              <div *ngIf="f['password'].errors && f['password'].errors['minlength']">Password should have 8 character.</div>
+          </div>
+          <!-- <div class="w-100 d-flex align-items-center justify-content-between custom-mt-auth">
+            <div class="d-flex align-items-center ">
+              <input type="checkbox"><span class="ms-2">Remember Login</span>
+            </div>
+            <a href="#" class="forgot-pass">Forgot Password?</a>
+          </div> -->
+
+          <button  [disabled]="form.invalid" type="submit" class="submit-btn">Sign In <span class="submit-btn-icon"><img src="../../assets/next.png" alt=""></span></button>
+      </form>
+
+        <div class="maker">
+          <!-- <img src="../../assets/pitb-logo.png" alt=""> -->
+          <!-- <p class="maker-text mb-0">Powered by Punjab Information Technology Board</p> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

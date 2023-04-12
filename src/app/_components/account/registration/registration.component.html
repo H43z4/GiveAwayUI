@@ -1,0 +1,143 @@
+<div class="container-fluid login">
+    <nav class="navbar">
+        <a class="navbar-brand" href="master/dashboard">
+            <img src="../../assets/logo.png" alt="Logo">
+        </a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="master/dashboard">
+                    <img src="../../assets/pos.png" alt="DASHBOARD">
+                    DASHBOARD
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <img src="../../assets/profile.png" alt="Login">
+                    Login
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="row">
+        <!-- <div class="col-lg-7 col-md-6 col-sm-12 order-lg-first">
+      </div> -->
+        <div class="col-lg-5 col-md-6 col-sm-12 order-lg-1 order-md-1 order-sm-2 registration-side">
+            <div class="registration-side-content">
+                <img src="../../assets/logo.png" class="logo w-100" alt="">
+                <!-- 
+          <div class="registration-text">
+            <p class="heading-text-registration mb-0">registration to your account</p>
+            <p class="desc-text-registration mb-0">To continue this service, you have to registration into your account.</p>
+          </div> -->
+
+                <form action="javascript:;" class="auth-forms w-100" autocomplete="off" [formGroup]="regForm"
+                    (ngSubmit)="submit()">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" formControlName="userName" id="username"
+                                    placeholder="Username" maxlength="50">
+                            </div>
+                            <div *ngIf="f['userName'].touched && f['userName'].invalid"
+                                class="alert alert-danger p-1 mb-0">
+                                <div *ngIf="f['userName'].errors && f['userName'].errors['required']">Username is
+                                    required.</div>
+                                <div *ngIf="f['userName'].errors && f['userName'].errors['minlength']">Username should
+                                    be 5 characters.</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <label for="fullName">Full Name</label>
+                                <input type="text" class="form-control" formControlName="fullName" id="fullName"
+                                    placeholder="Full Name"  (keypress)="keyPressAlfhabetsOnly($event)" maxlength="50">
+                            </div>
+                            <div *ngIf="f['fullName'].touched && f['fullName'].invalid"
+                                class="alert alert-danger p-1 mb-0">
+                                <div *ngIf="f['fullName'].errors && f['fullName'].errors['required']">Full Name is
+                                    required.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-floating mt-2">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control pass-field" formControlName="password"
+                                    id="password" placeholder="Password" (blur)="checkPassword()" maxlength="50">
+                            </div>
+                            <div *ngIf="f['password'].touched && f['password'].invalid"
+                                class="alert alert-danger p-1 mb-0">
+                                <div *ngIf="f['password'].errors && f['password'].errors['required']">Password is
+                                    required.</div>
+                                <div *ngIf="f['password'].errors && f['password'].errors['minlength']">Password should
+                                    have 8 characters.</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating mt-2">
+                                <label for="confirmPassword">Confirm Password</label>
+                                <input type="password" class="form-control pass-field" formControlName="confirmPassword"
+                                    id="confirmPassword" placeholder="Confirm Password" (blur)="checkPassword()" maxlength="50">
+                            </div>
+                            <div *ngIf="f['confirmPassword'].touched && f['confirmPassword'].invalid"
+                                class="alert alert-danger p-1 mb-0">
+                                <div *ngIf="f['confirmPassword'].errors && f['confirmPassword'].errors['required']">Password is
+                                    required.</div>
+                                <div *ngIf="f['confirmPassword'].errors && f['confirmPassword'].errors['minlength']">Password should
+                                    have 8 characters.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-floating mt-2">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" formControlName="email" id="email"
+                                    placeholder="Email" maxlength="50">
+                            </div>
+                            <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger p-1 mb-0">
+                                <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is required.</div>
+                                <div *ngIf="f['email'].errors && f['email'].errors['email']">Email is not valid.</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating mt-2">
+                                <label for="phoneNumber">Phone Number</label>
+                                <input type="text" class="form-control" formControlName="phoneNumber" id="phone"
+                                    placeholder="Phone Number" (keypress)="keyPressNumberOnly($event)" maxlength="15">
+                            </div>
+                            <div *ngIf="f['phoneNumber'].touched && f['phoneNumber'].invalid" class="alert alert-danger p-1 mb-0">
+                                <div *ngIf="f['phoneNumber'].errors && f['phoneNumber'].errors['required']">Phone is
+                                    required.</div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-floating mt-2">
+                                <label for="address">Address</label>
+                                <input type="text" class="form-control" formControlName="address" id="address"
+                                    placeholder="Address" maxlength="150">
+                            </div>
+                            <div *ngIf="f['address'].touched && f['address'].invalid"
+                                class="alert alert-danger p-1 mb-0">
+                                <div *ngIf="f['address'].errors && f['address'].errors['required']">Address is
+                                    required.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <button [disabled]="regForm.invalid" type="submit" class="reg-submit-btn">Register <span
+                            class="submit-btn-icon"><img src="../../assets/next.png" alt=""></span></button>
+                </form>
+                <div class="maker">
+                    <!-- <img src="../../assets/pitb-logo.png" alt=""> -->
+                    <!-- <p class="maker-text mb-0">Powered by Punjab Information Technology Board</p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

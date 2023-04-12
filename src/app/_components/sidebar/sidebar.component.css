@@ -1,0 +1,12 @@
+hr{
+    border-color: white !important;
+    width: 100%;
+}
+.min-vh-100 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px; /* adjust as needed */
+    height: 100%;
+  }
+  

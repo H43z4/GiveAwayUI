@@ -1,0 +1,107 @@
+<div class="container-fluid consignment">
+
+    <div class="divider mt-3"></div>
+    <section class="py-5">
+        <div class="container px-4 px-lg-5 mt-5">
+            <div class="row justify-content-center">
+                <!-- <div class="col-lg-7 col-md-6 col-sm-12 order-lg-first">
+      </div> -->
+                <form action="javascript:;" class="auth-forms w-100" autocomplete="off">
+                    <div class="row justify-content-center">
+
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <label for="itemName">Item Name</label>
+                                        <input type="text" class="form-control" id="itemName" placeholder="Item Name"
+                                            maxlength="50">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <label for="itemName">Item Type</label>
+                                        <select class="form-control form-select" style="width: auto">
+                                            <option value="">Please Select Item Type</option>
+                                            <option value="1">Furniture</option>
+                                            <option value="2">Stationary</option>
+                                            <option value="3">Other</option>
+                                          </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-floating mt-2">
+                                        <label for="itemSize">Item Size (cm)</label>
+                                        <input type="text" class="form-control" id="itemSize"
+                                            placeholder="Item Size" maxlength="50">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating mt-2">
+                                        <label for="ItemQuantity">Item Quantity</label>
+                                        <input type="number" class="form-control pass-field" id="ItemQuantity"
+                                            placeholder="Item Quantity" min="0">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-floating mt-2">
+                                        <label for="ItemHealth">Item Health/Strength</label>
+                                        <input type="number" class="form-control" id="ItemHealth" placeholder="Item Health in percentage "
+                                            min="0" max="100">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating mt-2">
+                                        <label for="Item Expiry">Item Expiry</label>
+                                        <input type="date" class="form-control" id="ItemExpiry" placeholder="Item Expiry">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-floating mt-2">
+                                        <label for="ItemDescription">Item Description</label>
+                                            <textarea class="form-control" id="ItemDescription" placeholder="Describe the item in detail here" maxlength="150"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-floating">
+                                        <label for="username">Select Images</label>
+                                        <input type="file" class="form-control-file" id="image-upload" multiple>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <h5>Image Preview:</h5>
+                                <div class="d-flex">
+                                    <div class="mr-2">
+                                        <canvas [width]="150" [height]="150" class="canvas-with-border mr-0.5 ml-1">
+                                            Your browser does not support the HTML5 canvas element.
+                                        </canvas>
+                                        <canvas [width]="150" [height]="150" class="canvas-with-border mr-0.5 ml-1">
+                                            Your browser does not support the HTML5 canvas element.
+                                        </canvas>
+                                        <canvas [width]="150" [height]="150" class="canvas-with-border mr-1 ml-1">
+                                            Your browser does not support the HTML5 canvas element.
+                                        </canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <button type="submit" class="reg-submit-btn">Add Item <span class="submit-btn-icon"><img
+                            src="../../assets/next.png" alt=""></span></button>
+            </div>
+        </div>
+    </section>
+</div>

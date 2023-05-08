@@ -19,6 +19,7 @@ import { CreateUserComponent, DashboardComponent, DynamicSetupsComponent, HomeCo
 import { SidebarComponent } from './_components/sidebar/sidebar.component';
 import { HeaderComponent } from './_components/header/header.component';
 import { RegistrationComponent } from './_components/account/registration/registration.component';
+import { AddItemsComponent } from './_components/add-items/add-items.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { RegistrationComponent } from './_components/account/registration/regist
     SidebarComponent,
     HeaderComponent,
     RegistrationComponent,
+    AddItemsComponent,
   ],
   imports: [
     BrowserModule,

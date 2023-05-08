@@ -4,6 +4,7 @@ import { LoginComponent, MaterComponent, HomeComponent, DashboardComponent, Crea
 
 import { AuthGuard } from './_helpers/auth.guard';
 import { RegistrationComponent } from './_components/account/registration/registration.component';
+import { AddItemsComponent } from './_components/add-items/add-items.component';
 
 
 const routes: Routes = [
@@ -14,7 +15,8 @@ const routes: Routes = [
   children: [
     // { path: '', component:  AComponent },
     { path: 'home', component:  HomeComponent, canActivate: [AuthGuard]  },
-    { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]  },
+    { path: 'dashboard', component: DashboardComponent },
+    { path: 'addItem', component: AddItemsComponent },
 
     // User Management
     { path: 'addUser', component: CreateUserComponent ,canActivate: [AuthGuard]   },

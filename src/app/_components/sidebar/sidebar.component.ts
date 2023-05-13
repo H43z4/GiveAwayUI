@@ -14,7 +14,7 @@ export class SidebarComponent implements OnInit {
     this.getRole();
   }
 
-
+//test
   getRole()
   {
      this.role = localStorage.getItem("role");

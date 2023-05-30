@@ -1,0 +1,28 @@
+.content {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 30px;
+  padding: 20px;
+  margin-top: 50px;
+}
+.lead{
+  color: black;
+}
+.how-it-works {
+  margin-top: 30px;
+}
+.how-it-works ol {
+  counter-reset: item;
+}
+.how-it-works li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 10px;
+}
+.how-it-works li:before {
+  content: counter(item);
+  counter-increment: item;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: bold;
+}

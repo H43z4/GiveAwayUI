@@ -1,7 +1,7 @@
 
 export class CreateUser {
-  
-    
+
+
     UserName: string="";
     Password: string="";
     RoleId: number=0;
@@ -12,12 +12,15 @@ export class CreateUser {
 }
 
 export class RegisterUser {
-  
-    
+
+
     userName: string="";
     password: string="";
     fullName: string="";
     phoneNumber: string="";
     address: string="";
     email: string="";
+    UserTypeId: number=0;
+    PersonId: string='';
+
 }

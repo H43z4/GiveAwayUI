@@ -1,0 +1,60 @@
+<div class="container consignment" style="width: 2041px;">
+  <div class="divider mt-3"></div>
+  <div class="row" >
+    <div class="col-md-6 mx-auto">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li *ngFor="let image of adImages; let i = index" [class.active]="i === 0" (click)="slideTo(i)" [attr.data-slide-to]="i"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item" *ngFor="let image of adImages; let i = index" [class.active]="i === 0">
+            <img class="d-block w-100 zoom-on-hover" [src]="image" alt="Slide {{ i }}">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-md-10 mx-auto">
+      <div class="block">
+        <div class="block-content">
+          <h2>{{ postsList.postTitle }}</h2>
+          <p class="lead">Location: <span class="font-weight-bold">{{ postsList.location }}</span></p>
+          <p>Ad Date: <span>{{ postsList.createDate | date:'dd-MMM-yyyy' }}</span></p>
+        </div>
+      </div>
+      <div class="block">
+        <div class="block-content">
+          <div class="row">
+            <div class="col-md-4">
+              <p class="lead">Donor: <span class="font-weight-bold">{{ postsList.userName }}</span></p>
+            </div>
+            <div class="col-md-4">
+              <p class="lead">Quantity: <span class="font-weight-bold">{{ postsList.quantity }}</span></p>
+            </div>
+            <div class="col-md-4">
+              <p class="lead">Expiry: <span class="font-weight-bold">{{ postsList.categoryId == 1 ? (postsList.validDate | date:'dd-MM-yyyy') : 'N/A' }}</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="block">
+        <div class="block-header lead">Description</div>
+        <div class="block-content">
+          <p class="lead">{{ postsList.postDiscription }}</p>
+        </div>
+      </div>
+      <button class="chat-submit-btn" (click)="ManageChatBox()">Chat</button>
+      <button class="pickup-submit-btn">Pick up</button>
+    </div>
+  </div>
+</div>

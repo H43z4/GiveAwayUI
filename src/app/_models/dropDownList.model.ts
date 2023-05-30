@@ -1,6 +1,6 @@
 export class dropDownList {
-    value?: string;
-    display?:string;
+    key?: string;
+    value?:string;
 }
 
 export class dropDownListMake {

@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="divider mt-3"></div>
+
+  <div class="row" style="width: 1240px;">
+    <div class="col-md-6 mx-auto">
+      <div class="profile">
+        <h2>User Profile</h2>
+        <div class="profile-details">
+          <div class="user-picture">
+            <img [src]="userPictureUrl" alt="User Picture">
+          </div>
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" [value]="userName" readonly>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-control" [value]="userEmail" readonly>
+          </div>
+          <div class="form-group">
+            <label>Location</label>
+            <input type="text" class="form-control" [value]="userLocation" readonly>
+          </div>
+        </div>
+        <div class="profile-actions">
+          <button class="chat-submit-btn" (click)="editProfile()">Edit Profile</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="width: 1240px;">
+    <div class="col-md-6 mx-auto">
+      <div class="ad-list">
+        <h3>Ads Posted by User</h3>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let ad of userAds">
+            <div class="ad-info">
+              <h5>{{ ad.title }}</h5>
+              <p>{{ ad.description }}</p>
+            </div>
+            <div class="ad-actions">
+              <button class="pickup-submit-btn btn-sm" (click)="editAd(ad.id)">Edit Ad</button>
+              <button class="chat-submit-btn btn-sm" (click)="activateAd(ad.id)">Activate Ad</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

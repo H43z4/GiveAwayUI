@@ -158,7 +158,7 @@
                                 (change)="changeDistrict()">
                                 <option value=""> Please select</option>
                                 <option *ngFor="let item of dddistricts" [value]="item.value">
-                                    {{item.display}}
+                                    {{item.value}
                                 </option>
                             </select>
                             <div *ngIf="f['DistrictId'].touched && f['DistrictId'].invalid " class="alert alert-danger">
@@ -184,7 +184,7 @@
                             <select formControlName="RoleId" class="form-control form-control-lg">
                                 <option value=""> Please select</option>
                                 <option *ngFor="let item of ddRoles" [value]="item.value">
-                                    {{item.display}}
+                                    {{item.value}}
                                 </option>
                             </select>
                             <div *ngIf="f['RoleId'].touched && f['RoleId'].invalid " class="alert alert-danger">
@@ -197,7 +197,7 @@
                             <select formControlName="LineManagerId" class="form-control form-control-lg">
                                 <option value=""> Please select</option>
                                 <option *ngFor="let item of ddLineManager" [value]="item.value">
-                                    {{item.display}}
+                                    {{item.value}}
                                 </option>
                             </select>
                             <div *ngIf="f['LineManagerId'].touched && f['LineManagerId'].invalid "

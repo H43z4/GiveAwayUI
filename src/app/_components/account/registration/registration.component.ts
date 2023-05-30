@@ -15,20 +15,23 @@ export class RegistrationComponent implements OnInit {
   loading = false;
   submitted = false;
   errmsg="";
+  selectedItemType: string = '';
   constructor(
-   
+
     private route: ActivatedRoute,
     private accountService: AccountService,
     private toastrService: ToastrService,
     private router: Router,
     private spinner: NgxSpinnerService
-    
+
 ) { }
 
   ngOnInit(): void {
   }
   regForm = new FormGroup({
     userName: new FormControl('', [Validators.required, Validators.minLength(5)]),
+    userType: new FormControl('', [Validators.required]),
+    uniqueId: new FormControl('', [Validators.required]),
     fullName: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required, Validators.minLength(8)]),
     confirmPassword: new FormControl('', [Validators.required, Validators.minLength(8)]),
@@ -36,14 +39,14 @@ export class RegistrationComponent implements OnInit {
     phoneNumber: new FormControl('', [Validators.required]),
     address: new FormControl('', [Validators.required])
   });
-  
+
   get f(){
     return this.regForm.controls;
   }
   keyPressNumberOnly(event: KeyboardEvent) {
     const pattern = /[0-9]/;
     const inputChar = String.fromCharCode(event.charCode);
-    if (!pattern.test(inputChar)) {    
+    if (!pattern.test(inputChar)) {
         // invalid character, prevent input
         event.preventDefault();
     }
@@ -51,7 +54,7 @@ export class RegistrationComponent implements OnInit {
   keyPressAlfhabetsOnly(event: KeyboardEvent) {
     const pattern = /^[a-zA-Z ]*$/;
     const inputChar = String.fromCharCode(event.charCode);
-    if (!pattern.test(inputChar)) {    
+    if (!pattern.test(inputChar)) {
         // invalid character, prevent input
         event.preventDefault();
     }
@@ -61,8 +64,9 @@ debugger
     if(this.regForm.value.password!==this.regForm.value.confirmPassword){
       this.spinner.hide();
       this.toastrService.warning('Password and confirm password should be same', 'Warning!');
-      return;
+      return false;
     }
+    return true;
   }
   submit(){
     this.spinner.show();
@@ -73,6 +77,9 @@ debugger
         if (!this.regForm.valid) {
           this.spinner.hide();
           this.regForm.markAllAsTouched();
+          return;
+        }
+        if (!this.checkPassword()) {
           return;
         }
         if(this.regForm.value.password!==this.regForm.value.confirmPassword){
@@ -90,16 +97,17 @@ debugger
         userObj.address = this.regForm.value.address;
         userObj.email = this.regForm.value.email;
         userObj.phoneNumber = this.regForm.value.phoneNumber;
-
+        userObj.UserTypeId = this.regForm.value.userType;
+        userObj.PersonId = this.regForm.value.uniqueId;
 
         this.accountService.registerUser(userObj).subscribe(
           result => {
             if(result?.status=='0'){
               debugger;
-              this.spinner.hide();  
+              this.spinner.hide();
               //  const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/master/home';
               debugger
-              this.toastrService.success("Data saved successfully!", 'Error!');
+              this.toastrService.success("Data saved successfully!", 'Success!');
               this.router.navigateByUrl('');
 
             } else if(result?.status!='1'){
@@ -120,4 +128,5 @@ debugger
 
           );
   }
+
 }

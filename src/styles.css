@@ -56,7 +56,7 @@ input[type=number] {
     margin: 30px 0;
 }
 .logo{
-    margin: 27px 0 45px 110px;
+    margin: 10px 0 10px 165px;
     max-width: 100px;
     max-height: 100px;
 }
@@ -145,8 +145,43 @@ input[type=number] {
     margin-top: 125px;
     outline: none;
     border: none;
-    position: sticky;
+    position: relative;
     bottom: 30px;
+}
+.chat-submit-btn{
+  width: 30%;
+  height: 57.69px;
+  background: #234575;
+  border-radius: 7.21127px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14.4225px;
+  line-height: 17px;
+  color: #FFFFFF;
+  margin-top: 25px;
+  outline: none;
+  border: none;
+  position: relative;
+  bottom: 5px;
+  float: left;
+}
+.pickup-submit-btn{
+  width: 30%;
+  height: 57.69px;
+  background: #237574;
+  border-radius: 7.21127px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14.4225px;
+  line-height: 17px;
+  color: #FFFFFF;
+  margin-top: 25px;
+  /* margin-left: 90px; */
+  float: right;
+  outline: none;
+  border: none;
+  position: relative;
+  bottom: 5px;
 }
 .submit-btn-icon{
     position: absolute;
@@ -192,7 +227,15 @@ input[type=number] {
     cursor:pointer;
 }
 .consignment{
-    padding: 0 60px;
+  min-height: 100vh;
+  /* background: linear-gradient( rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5) ), url('./assets/login_bg.jpg'); */
+
+  /* background: url('./assets/login_bg.jpg'); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+    /* padding: 0 60px; */
 }
 .consign-heading-title{
     font-style: normal;
@@ -707,7 +750,7 @@ table.dataTable tbody th, table.dataTable tbody td{
     text-transform: uppercase;
     color: rgba(0, 0, 0, 0.87);
 }
-@media(max-width:600px){
+/* @media(max-width:600px){
     .header{
         flex-direction: column;
         justify-content: flex-start;
@@ -715,7 +758,7 @@ table.dataTable tbody th, table.dataTable tbody td{
     .consignment{
         padding: 0 20px;
     }
-  
+
     .back{
         top: -40px;
     }
@@ -748,4 +791,4 @@ table.dataTable tbody th, table.dataTable tbody td{
     .maker{
         width: 80%;
     }
-}
+} */

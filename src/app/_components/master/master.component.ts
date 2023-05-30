@@ -19,7 +19,7 @@ export class MaterComponent implements OnInit {
  public isCollapsed = false;
   status: boolean = false;
   clickEvent(){
-      this.status = !this.status;       
+      this.status = !this.status;
   }
 
   // public isMenuCollapsed = true;
@@ -31,17 +31,23 @@ export class MaterComponent implements OnInit {
    this.accountService.user.subscribe(x => this.user = x);
       //console.log(this.user);
       this.cussrentpage=this.accountService.getPageTitle(this.router.url);
-     
+
   }
 
   logout() {
     this.accountService.logout();
 }
+profile(){
+  this.router.navigate(['/master/usrProfile']);
+}
+chat(){
+  this.router.navigate(['/master/chats']);
+}
 
   ngOnInit(): void {
     //console.log(this.router.url);
     this.cussrentpage=this.accountService.getPageTitle(this.router.url);
-    
+
   }
 
 }

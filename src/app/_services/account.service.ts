@@ -30,7 +30,7 @@ export class AccountService {
 
      //return this.http.post<User>(`${environment.apiUrl}/Auth/Login`, { username, password })
      //return this.http.post<User>(`http://10.50.126.65:5010/api/Auth/Login`, { username, password })
-     
+
     login(username:string, password:string) {
         return this.http.post<User>(`${environment.apiUrl}/Auth/Login`, { username, password })
             .pipe(map(user => {
@@ -41,29 +41,31 @@ export class AccountService {
                         { routename: "Create User", routesadd: "addUser" },
                        { routename: "User List", routesadd: "userlist" },
                        { routename: "User Rights", routesadd: "userrights" }
-                   ]},                
-                
-                
+                   ]},
+
+
                 ];
                 // store user details and jwt token in local storage to keep user logged in between page refreshes
                 localStorage.setItem('user', JSON.stringify(user));
+                localStorage.setItem('userId', JSON.stringify(user.data?.userName));
+                localStorage.setItem('userFullName', JSON.stringify(user.data?.fullName));
                 this.userSubject.next(user);
                 return user;
             }
             )
-            
+
             );
     }
 
     logout() {
         // remove user from local storage and set current user to null
         localStorage.removeItem('user');
-        
+
         this.userSubject.next(undefined!);
         this.router.navigate(['/']);
     }
 
-   
+
 
     register(user: User) {
         return this.http.post(`${environment.apiUrl}/users/register`, user);
@@ -87,9 +89,9 @@ export class AccountService {
         let pageTitle=[
             {Title: "NR / Owner Information", url: "/master/ownerdetail" },
             {Title: "NR / Keeper", url: "/master/Keeper" },
-           
-        
-        
+
+
+
         ];
 
         let desiredObject = pageTitle.find(element => element.url === url);

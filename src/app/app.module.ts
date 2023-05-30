@@ -20,6 +20,11 @@ import { SidebarComponent } from './_components/sidebar/sidebar.component';
 import { HeaderComponent } from './_components/header/header.component';
 import { RegistrationComponent } from './_components/account/registration/registration.component';
 import { AddItemsComponent } from './_components/add-items/add-items.component';
+import { AboutUsComponent } from './_components/info/about-us/about-us.component';
+import { ContactUsComponent } from './_components/info/contact-us/contact-us.component';
+import { ItemDetailComponent } from './_components/item-detail/item-detail.component';
+import { UserProfileComponent } from './_components/account/user-profile/user-profile.component';
+import { ChatComponent } from './_components/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +40,11 @@ import { AddItemsComponent } from './_components/add-items/add-items.component';
     HeaderComponent,
     RegistrationComponent,
     AddItemsComponent,
+    AboutUsComponent,
+    ContactUsComponent,
+    ItemDetailComponent,
+    UserProfileComponent,
+    ChatComponent,
   ],
   imports: [
     BrowserModule,

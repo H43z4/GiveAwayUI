@@ -7,15 +7,18 @@
       <div class="col py-3">
         <div class="col-md-4 w-100"></div>
         <div class="col-md-4 w-100"></div>
-        <div class="col-md-4 container-fluid w-50" style="left: 40%">
-          <nav class="navbar navbar-expand-lg navbar-light bg-light header">
+        <div class="col-md-4 container-fluid w-50" style="left: 40%" >
+          <nav class="navbar navbar-expand-lg navbar-light header">
             <div class="container px-4 px-lg-5">
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <form class="d-flex">
-                  <button class="btn btn-outline-dark" type="submit">
+                  <!-- <button class="btn btn-outline-dark" (click)="profile()">
                     <i class="bi-cart-fill me-1"></i>
-                    Cart
-                    <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                    Profile
+                  </button> -->
+                  <button class="btn btn-outline-dark ml-2" (click)="chat()">
+                    <i class="bi-cart-fill me-1"></i>
+                    Chats
                   </button>
                   <button class="btn btn-outline-danger ml-2 logout" (click)="logout()">
                     <i class="bi-cart-fill me-1"></i>
@@ -25,7 +28,7 @@
               </div>
             </div>
           </nav>
-  
+
         </div>
         <router-outlet></router-outlet>
       </div>

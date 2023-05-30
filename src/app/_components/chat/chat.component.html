@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="divider mt-3"></div>
+
+  <div class="row" style="width: 1240px;height: 615px;">
+    <div class="col-md-4">
+      <div class="chat-list">
+        <h2>Chats</h2>
+        <ul class="list-group">
+          <li class="list-group-item chat" *ngFor="let chat of chatList" [class.active]="chat === selectedChat"
+            (click)="selectChat(chat)">
+            <p class="lead">{{ chat.receiverName }}</p>
+            <p>{{ chat.postTitle }}</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-8 d-flex flex-column">
+      <div class="chat-panel flex-grow-1">
+        <div *ngIf="selectedChat">
+          <h2>{{ selectedChat.receiverName }}</h2>
+          <div class="message-list">
+            <div class="message" *ngFor="let message of selectedChat.conversations">
+              <div class="sender" style="text-decoration: underline;"
+                [ngClass]="{ 'text-right': message.senderUserName === this.myId, 'text-left': message.senderUserName !== this.myId }">
+                {{ message.senderUserName }}
+              </div>
+              <div class="text lead"
+                [ngClass]="{ 'text-right': message.senderUserName === this.myId, 'text-left': message.senderUserName !== this.myId }">
+                {{ message.msg }}
+              </div>
+              <div class="timestamp small text-muted"
+                [ngClass]="{ 'text-right': message.senderUserName === this.myId, 'text-left': message.senderUserName !== this.myId }">
+                {{ message.dateTime | date:'short' }}
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div *ngIf="!selectedChat">
+          <p>Select a chat to start messaging</p>
+        </div>
+      </div>
+      <div class="input-group" *ngIf="selectedChat">
+        <input type="text" class="form-control" [(ngModel)]="newMessage" placeholder="Type a message..."
+          (keydown.enter)="PostMassege()" #messageInput>
+        <div class="input-group-append">
+          <button class="btn btn-primary" (click)="PostMassege()">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

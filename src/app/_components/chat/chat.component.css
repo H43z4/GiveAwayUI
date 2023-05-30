@@ -1,0 +1,17 @@
+.chat.active {
+  background-color: #3566ab;
+}
+.message-list {
+  height: 450px;
+  overflow-y: auto;
+  padding-right: 15px; /* Add padding to accommodate the scrollbar */
+}
+.chat-list {
+  height: 450px;
+  overflow-y: auto;
+  padding-right: 15px; /* Add padding to accommodate the scrollbar */
+
+}
+.timestamp {
+  font-size: 12px;
+}

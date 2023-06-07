@@ -31,7 +31,7 @@ export class RegistrationComponent implements OnInit {
   regForm = new FormGroup({
     userName: new FormControl('', [Validators.required, Validators.minLength(5)]),
     userType: new FormControl('', [Validators.required]),
-    uniqueId: new FormControl('', [Validators.required]),
+    // uniqueId: new FormControl('', [Validators.required]),
     fullName: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required, Validators.minLength(8)]),
     confirmPassword: new FormControl('', [Validators.required, Validators.minLength(8)]),
@@ -98,7 +98,7 @@ debugger
         userObj.email = this.regForm.value.email;
         userObj.phoneNumber = this.regForm.value.phoneNumber;
         userObj.UserTypeId = this.regForm.value.userType;
-        userObj.PersonId = this.regForm.value.uniqueId;
+        userObj.PersonId = 'aaaaaaa111111';
 
         this.accountService.registerUser(userObj).subscribe(
           result => {

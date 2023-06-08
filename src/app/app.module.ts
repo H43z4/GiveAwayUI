@@ -27,6 +27,7 @@ import { UserProfileComponent } from './_components/account/user-profile/user-pr
 import { ChatComponent } from './_components/chat/chat.component';
 import { DashboardAdmComponent } from './_components/admin/dashboard-adm/dashboard-adm.component';
 import { ChartsModule } from 'ng2-charts';
+import { RequestsAdmComponent } from './_components/admin/RequestsAdmin/requests-adm/requests-adm.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { ChartsModule } from 'ng2-charts';
     UserProfileComponent,
     ChatComponent,
     DashboardAdmComponent,
+    RequestsAdmComponent,
   ],
   imports: [
     BrowserModule,

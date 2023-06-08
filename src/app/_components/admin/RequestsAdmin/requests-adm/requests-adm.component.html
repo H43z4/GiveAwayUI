@@ -1,0 +1,28 @@
+<div class="container ">
+  <div class="divider mt-3"></div>
+
+
+    <div class="row ml-2 pt-3 text-left">
+      <div class="row" style="width: 1240px;height: 760px;">
+        <div class="col-md-6 mx-auto">
+          <div class="ad-list">
+            <h3>Donation Requests</h3>
+            <h5 class="lead" *ngIf="userAds.length === 0 "> No requests found</h5>
+            <ul class="list-group" *ngIf="userAds !== null && userAds.length > 0">
+              <li class="list-group-item" *ngFor="let ad of userAds">
+                <div class="ad-info">
+                  <h5>{{ ad.postTitle }}</h5>
+                  <p>{{ ad.postDiscription }}</p>
+                </div>
+                <div class="ad-actions">
+                  <!-- <button class="view-submit-btn btn-sm" (click)="editAd(ad.id)">View</button> -->
+                  <button class="pickup-submit-btn btn-sm" (click)="changeApprovalState(ad.id,true)">Approve</button>
+                  <button class="reject-submit-btn btn-sm" (click)="changeApprovalState(ad.id,false)">Reject</button>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

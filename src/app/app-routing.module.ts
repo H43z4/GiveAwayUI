@@ -10,6 +10,8 @@ import { ContactUsComponent } from './_components/info/contact-us/contact-us.com
 import { ItemDetailComponent } from './_components/item-detail/item-detail.component';
 import { UserProfileComponent } from './_components/account/user-profile/user-profile.component';
 import { ChatComponent } from './_components/chat/chat.component';
+import { DashboardAdmComponent } from './_components/admin/dashboard-adm/dashboard-adm.component';
+import { RequestsAdmComponent } from './_components/admin/RequestsAdmin/requests-adm/requests-adm.component';
 
 
 const routes: Routes = [
@@ -31,6 +33,8 @@ const routes: Routes = [
     // User Management
     { path: 'addUser', component: CreateUserComponent ,canActivate: [AuthGuard]   },
     { path: 'userlist', component: UserListComponent ,canActivate: [AuthGuard]   },
+    { path: 'dashboardAdmin', component: DashboardAdmComponent ,canActivate: [AuthGuard]   },
+    { path: 'requestsAdmin', component: RequestsAdmComponent ,canActivate: [AuthGuard]   },
   ]
  },
   //{ path: 'master/home', component: HomeComponent, canActivate: [AuthGuard]  },

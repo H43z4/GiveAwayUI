@@ -69,7 +69,7 @@
                 <div class="col-md-12">
                   <div class="form-floating mt-2">
                     <label for="ItemLoc" *ngIf="selectedItemType === '1' || selectedItemType === '2' ||  selectedItemType === ''" >Pick up Location</label>
-                    <label for="ItemLoc" *ngIf="selectedItemType === '3' || selectedItemType === '4'">Drop off Location</label>
+                    <label for="ItemLoc" *ngIf="selectedItemType === '3' || selectedItemType === '4'">Location</label>
                     <input type="text" class="form-control" formControlName="ItemLoc" id="ItemLoc" placeholder="Item Location">
                     <div *ngIf="f['ItemLoc'].touched && f['ItemLoc'].invalid" class="alert alert-danger">
                       Pick up location required.

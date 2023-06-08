@@ -35,7 +35,7 @@ input[type=number] {
     width: 320px;
 }
 .registration-side{
-    height: 95vh;
+    height: 100vh;
     background: #FFFFFF;
     box-shadow: 0px 16px 112px rgba(0, 0, 0, 0.61);
     border-radius: 50px;
@@ -50,13 +50,18 @@ input[type=number] {
     width: 70%;
 }
 .registration-side-content{
-    width: 70%;
+    width: 100%;
 }
 .login-text{
     margin: 30px 0;
 }
 .logo{
-    margin: 10px 0 10px 165px;
+    margin: 10px 0 10px 85px;
+    max-width: 100px;
+    max-height: 100px;
+}
+.logo-reg{
+    margin: 10px 0 10px 185px;
     max-width: 100px;
     max-height: 100px;
 }
@@ -130,7 +135,7 @@ input[type=number] {
     outline: none;
     border: none;
     position: sticky;
-    bottom: 110px;
+    bottom: 60px;
 }
 .reg-submit-btn{
     width: 100%;
@@ -146,7 +151,7 @@ input[type=number] {
     outline: none;
     border: none;
     position: relative;
-    bottom: 30px;
+    bottom: 90px;
 }
 .chat-submit-btn{
   width: 30%;

@@ -68,6 +68,10 @@ input[type=number] {
 .pass-field{
     position: relative;
 }
+.tokentax-content{
+  width: 98%;
+  background: #fff;
+}
 .show-pass{
     position: absolute;
     right: 20px;
@@ -153,6 +157,23 @@ input[type=number] {
     position: relative;
     bottom: 90px;
 }
+.reject-submit-btn{
+  width: 30%;
+  height: 57.69px;
+  background: #752323;
+  border-radius: 7.21127px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14.4225px;
+  line-height: 17px;
+  color: #FFFFFF;
+  margin-top: 25px;
+  outline: none;
+  border: none;
+  position: relative;
+  bottom: 5px;
+  float: left;
+}
 .chat-submit-btn{
   width: 30%;
   height: 57.69px;
@@ -183,6 +204,24 @@ input[type=number] {
   margin-top: 25px;
   /* margin-left: 90px; */
   float: right;
+  outline: none;
+  border: none;
+  position: relative;
+  bottom: 5px;
+}
+.view-submit-btn{
+  width: 30%;
+  height: 57.69px;
+  background: #9fa54e;
+  border-radius: 7.21127px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14.4225px;
+  line-height: 17px;
+  color: #FFFFFF;
+  margin-top: 25px;
+  margin-left: 25px;
+  /* float: right; */
   outline: none;
   border: none;
   position: relative;

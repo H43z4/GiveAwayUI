@@ -25,6 +25,9 @@ import { ContactUsComponent } from './_components/info/contact-us/contact-us.com
 import { ItemDetailComponent } from './_components/item-detail/item-detail.component';
 import { UserProfileComponent } from './_components/account/user-profile/user-profile.component';
 import { ChatComponent } from './_components/chat/chat.component';
+import { DashboardAdmComponent } from './_components/admin/dashboard-adm/dashboard-adm.component';
+import { ChartsModule } from 'ng2-charts';
+import { RequestsAdmComponent } from './_components/admin/RequestsAdmin/requests-adm/requests-adm.component';
 
 @NgModule({
   declarations: [
@@ -45,17 +48,20 @@ import { ChatComponent } from './_components/chat/chat.component';
     ItemDetailComponent,
     UserProfileComponent,
     ChatComponent,
+    DashboardAdmComponent,
+    RequestsAdmComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     DataTablesModule,
-    FormsModule, 
+    FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     NgxSpinnerModule,
     NgSelectModule ,
     NgbModule,
+    ChartsModule,
     MetismenuAngularModule,
     NgxTrimDirectiveModule,
     NgxMaskModule.forRoot(),

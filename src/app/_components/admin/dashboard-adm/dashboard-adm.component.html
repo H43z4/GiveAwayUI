@@ -1,0 +1,27 @@
+<div class="container-fluid no-gutters d-flex flex-column align-items-center justify-content-center">
+  <div class="tokentax-content align-items-center">
+
+    <div class="row ml-2 pt-3 text-left">
+      <div class="card-deck row w-100">
+        <div class="card bg-white col-md-12">
+          <div class="card-header text-center">Users Registration Breakdown</div>
+          <div class="card-body text-center">
+            <canvas baseChart [data]="pieChartData2" [labels]="pieChartLabels2" [chartType]="pieChartType2"
+              [options]="pieChartOptions2" [colors]="pieChartColors2" [legend]="pieChartLegend2">
+            </canvas>
+          </div>
+        </div>
+      </div>
+      <div class="card-deck row w-100">
+        <div class="card bg-white col-md-12">
+          <div class="card-header text-center">Donations Breakdown</div>
+          <div class="card-body text-center">
+            <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
+              [options]="pieChartOptions" [colors]="pieChartColors" [legend]="pieChartLegend">
+            </canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

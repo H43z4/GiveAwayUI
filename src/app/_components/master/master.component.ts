@@ -13,6 +13,7 @@ export class MaterComponent implements OnInit {
 
   user!: User;
   cussrentpage?:string;
+  userFullName: string = '';
 
   expanded: boolean = true;
   expandedOut: boolean = true;
@@ -47,7 +48,7 @@ chat(){
   ngOnInit(): void {
     //console.log(this.router.url);
     this.cussrentpage=this.accountService.getPageTitle(this.router.url);
-
+    this.userFullName = localStorage.getItem('userFullName')!.replace(/"/g, '');
   }
 
 }

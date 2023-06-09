@@ -4,7 +4,7 @@
     <div class="row ml-2 pt-3 text-left">
       <div class="card-deck row w-100">
         <div class="card bg-white col-md-12">
-          <div class="card-header text-center">Users Registration Breakdown</div>
+          <div class="card-header text-center">Users Registration Breakdown of <h3 class="lead" style="color: #237574;">{{totalUsers}}</h3> Users</div>
           <div class="card-body text-center">
             <canvas baseChart [data]="pieChartData2" [labels]="pieChartLabels2" [chartType]="pieChartType2"
               [options]="pieChartOptions2" [colors]="pieChartColors2" [legend]="pieChartLegend2">
@@ -14,7 +14,7 @@
       </div>
       <div class="card-deck row w-100">
         <div class="card bg-white col-md-12">
-          <div class="card-header text-center">Donations Breakdown</div>
+          <div class="card-header text-center">Donations Breakdown of <h3 class="lead" style="color: #234575;">{{totalItems}}</h3> Items</div>
           <div class="card-body text-center">
             <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
               [options]="pieChartOptions" [colors]="pieChartColors" [legend]="pieChartLegend">

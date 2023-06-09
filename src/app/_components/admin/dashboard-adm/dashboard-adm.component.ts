@@ -9,7 +9,8 @@ import { PostManagementService } from 'src/app/_services/postManagement/post-man
 })
 export class DashboardAdmComponent implements OnInit {
   constructor(private postManagementService: PostManagementService) {}
-
+totalUsers:number =0;
+totalItems:number=0;
   ngOnInit(): void {
     this.updateDashboard();
   }
@@ -84,6 +85,7 @@ export class DashboardAdmComponent implements OnInit {
         debugger;
         if (result?.data) {
           this.setPieChartData(result?.data[0]);
+          this.totalItems = Number(result?.data[0].foodCounts)+Number(result?.data[0].nonFoodCounts)+Number(result?.data[0].wantedCounts)+Number(result?.data[0].borrowCounts)
           this.updateTaxDashboard();
         }
       }
@@ -103,6 +105,7 @@ export class DashboardAdmComponent implements OnInit {
         if (result?.data) {
           console.log(result.data);
           this.setTaxPieChartData(result?.data[0]);
+          this.totalUsers = Number(result?.data[0].individualCounts)+Number(result?.data[0].organizationalCounts)+Number(result?.data[0].otherCounts)
         }
       }
     });

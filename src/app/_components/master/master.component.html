@@ -12,11 +12,11 @@
             <div class="container px-4 px-lg-5">
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <form class="d-flex">
-                  <!-- <button class="btn btn-outline-dark" (click)="profile()">
+                  <button class="btn btn-outline-dark" (click)="profile()" *ngIf="userFullName !=='Administrator'">
                     <i class="bi-cart-fill me-1"></i>
                     Profile
-                  </button> -->
-                  <button class="btn btn-outline-dark ml-2" (click)="chat()">
+                  </button>
+                  <button class="btn btn-outline-dark ml-2" (click)="chat()" *ngIf="userFullName !=='Administrator'">
                     <i class="bi-cart-fill me-1"></i>
                     Chats
                   </button>

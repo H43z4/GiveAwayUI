@@ -36,7 +36,7 @@
           <div class="row">
             <div class="col-md-12">
               <div class="form-floating">
-                <label for="userType">User Type</label>
+                <label for="userType">User Type *</label>
                 <select class="form-control form-select" formControlName="userType"
                   [(ngModel)]="selectedItemType">
                   <option value="">Please Select User Type</option>
@@ -64,7 +64,7 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-floating mt-2">
-                <label for="username">Username</label>
+                <label for="username">Username *</label>
                 <input type="text" class="form-control" formControlName="userName" id="username" placeholder="Username"
                   maxlength="50">
               </div>
@@ -77,7 +77,7 @@
             </div>
             <div class="col-md-6">
               <div class="form-floating mt-2">
-                <label for="fullName">Full Name</label>
+                <label for="fullName">Full Name *</label>
                 <input type="text" class="form-control" formControlName="fullName" id="fullName" placeholder="Full Name"
                   (keypress)="keyPressAlfhabetsOnly($event)" maxlength="50">
               </div>
@@ -90,7 +90,7 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-floating mt-2">
-                <label for="password">Password</label>
+                <label for="password">Password *</label>
                 <input type="password" class="form-control pass-field" formControlName="password" id="password"
                   placeholder="Password" maxlength="50">
               </div>
@@ -103,7 +103,7 @@
             </div>
             <div class="col-md-6">
               <div class="form-floating mt-2">
-                <label for="confirmPassword">Confirm Password</label>
+                <label for="confirmPassword">Confirm Password *</label>
                 <input type="password" class="form-control pass-field" formControlName="confirmPassword"
                   id="confirmPassword" placeholder="Confirm Password" maxlength="50">
               </div>
@@ -119,7 +119,7 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-floating mt-2">
-                <label for="email">Email</label>
+                <label for="email">Email *</label>
                 <input type="email" class="form-control" formControlName="email" id="email" placeholder="Email"
                   maxlength="50">
               </div>
@@ -130,7 +130,7 @@
             </div>
             <div class="col-md-6">
               <div class="form-floating mt-2">
-                <label for="phoneNumber">Phone Number</label>
+                <label for="phoneNumber">Phone Number *</label>
                 <input type="text" class="form-control" formControlName="phoneNumber" id="phone"
                   placeholder="Phone Number" (keypress)="keyPressNumberOnly($event)" maxlength="15">
               </div>
@@ -144,7 +144,7 @@
           <div class="row">
             <div class="col-md-12">
               <div class="form-floating mt-2">
-                <label for="address">Address</label>
+                <label for="address">Address *</label>
                 <input type="text" class="form-control" formControlName="address" id="address" placeholder="Address"
                   maxlength="150">
               </div>

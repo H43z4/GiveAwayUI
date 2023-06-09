@@ -13,7 +13,7 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-floating">
-                    <label for="itemName">Item Name</label>
+                    <label for="itemName">Item Name *</label>
                     <input type="text" formControlName="itemName" class="form-control" id="itemName" placeholder="Item Name" maxlength="50">
                     <div *ngIf="f['itemName'].touched && f['itemName'].invalid " class="alert alert-danger">
                       Item name required.
@@ -22,7 +22,7 @@
                 </div>
                 <div class="col-md-6">
                   <div class="form-floating">
-                    <label for="itemName">Item Type</label>
+                    <label for="itemName">Item Type *</label>
                     <select class="form-control form-select" formControlName="itemType" style="width: auto" [(ngModel)]="selectedItemType">
                       <option value="">Please Select Item Type</option>
                       <option *ngFor="let item of ddCategory" [value]="item.key">
@@ -38,13 +38,13 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-floating mt-2">
-                    <label for="itemSize">Item Size (cm)</label>
+                    <label for="itemSize">Item Size (cm) *</label>
                     <input type="text" class="form-control" formControlName="itemSize" id="itemSize" placeholder="Item Size" maxlength="50">
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-floating mt-2">
-                    <label for="ItemQuantity">Item Quantity</label>
+                    <label for="ItemQuantity">Item Quantity *</label>
                     <input type="number" class="form-control pass-field" formControlName="ItemQuantity" id="ItemQuantity" placeholder="Item Quantity"
                       min="1">
                       <div *ngIf="f['ItemQuantity'].touched && f['ItemQuantity'].invalid " class="alert alert-danger">
@@ -56,7 +56,7 @@
               <div class="row" *ngIf="selectedItemType ==='1'">
                 <div class="col-md-12">
                   <div class="form-floating mt-2">
-                    <label for="Item Expiry">Item Expiry</label>
+                    <label for="Item Expiry">Item Expiry *</label>
                     <input type="date" class="form-control" formControlName="ItemExpiry" id="ItemExpiry" placeholder="Item Expiry">
                     <div *ngIf="f['ItemExpiry'].touched && f['ItemExpiry'].invalid && selectedItemType ==='1'" class="alert alert-danger">
                       Item expiry required.
@@ -68,8 +68,8 @@
               <div class="row">
                 <div class="col-md-12">
                   <div class="form-floating mt-2">
-                    <label for="ItemLoc" *ngIf="selectedItemType === '1' || selectedItemType === '2' ||  selectedItemType === ''" >Pick up Location</label>
-                    <label for="ItemLoc" *ngIf="selectedItemType === '3' || selectedItemType === '4'">Drop off Location</label>
+                    <label for="ItemLoc" *ngIf="selectedItemType === '1' || selectedItemType === '2' ||  selectedItemType === ''" >Pick up Location *</label>
+                    <label for="ItemLoc" *ngIf="selectedItemType === '3' || selectedItemType === '4'">Drop off Location *</label>
                     <input type="text" class="form-control" formControlName="ItemLoc" id="ItemLoc" placeholder="Item Location">
                     <div *ngIf="f['ItemLoc'].touched && f['ItemLoc'].invalid" class="alert alert-danger">
                       Pick up location required.
@@ -81,7 +81,7 @@
               <div class="row">
                 <div class="col-md-12">
                   <div class="form-floating mt-2">
-                    <label for="ItemDescription">Item Description</label>
+                    <label for="ItemDescription">Item Description *</label>
                     <textarea class="form-control" formControlName="ItemDescription" id="ItemDescription" placeholder="Describe the item in detail here"
                       style="height: 200px;" maxlength="850"></textarea>
                       <div *ngIf="f['ItemDescription'].touched && f['ItemDescription'].invalid " class="alert alert-danger">
@@ -95,7 +95,7 @@
               <div class="row">
                 <div class="col-md-12">
                   <div class="form-floating">
-                    <label for="username">Select Images</label>
+                    <label for="username">Select Images *</label>
                     <input type="file" formControlName="imageUpload" class="form-control-file" id="image-upload" multiple
                       (change)="handleFileInput($event)">
                   </div>

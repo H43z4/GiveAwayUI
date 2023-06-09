@@ -47,4 +47,7 @@ export class PostManagementService {
   getDashboardCounts() {
     return this.http.get<generalResponse>(`${environment.apiUrl}/Post/GetCountByCategory`);
   }
+  GetUserById() {
+    return this.http.get<generalResponse>(`${environment.apiUrl}/Post/GetUserByIdWithPosts`);
+  }
 }

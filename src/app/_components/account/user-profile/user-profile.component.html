@@ -4,11 +4,11 @@
   <div class="row" style="width: 1240px;">
     <div class="col-md-6 mx-auto">
       <div class="profile">
-        <h2>User Profile</h2>
+        <h2 class="text-center">Profile</h2>
         <div class="profile-details">
-          <div class="user-picture">
+          <!-- <div class="user-picture">
             <img [src]="userPictureUrl" alt="User Picture">
-          </div>
+          </div> -->
           <div class="form-group">
             <label>Name</label>
             <input type="text" class="form-control" [value]="userName" readonly>
@@ -22,25 +22,42 @@
             <input type="text" class="form-control" [value]="userLocation" readonly>
           </div>
         </div>
-        <div class="profile-actions">
+        <!-- <div class="profile-actions">
           <button class="chat-submit-btn" (click)="editProfile()">Edit Profile</button>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
-  <div class="row" style="width: 1240px;">
-    <div class="col-md-6 mx-auto">
+  <div class="row mt-5" style="width: 1240px;">
+    <div class="col-md-6 mx-auto card"  style="background-color:#237574;border-radius: 30px;">
       <div class="ad-list">
-        <h3>Ads Posted by User</h3>
-        <ul class="list-group">
-          <li class="list-group-item" *ngFor="let ad of userAds">
+        <h3 class="text-center" style="color: white;">Your Donations</h3>
+        <ul class="list-group" style="border-radius: 30px;">
+          <li class="list-group-item" *ngFor="let ad of userAds" style="background-color: #cafffe;">
             <div class="ad-info">
-              <h5>{{ ad.title }}</h5>
-              <p>{{ ad.description }}</p>
+              <h5>{{ ad.postTitle }}</h5>
+              <p>{{ ad.postDiscription }}</p>
             </div>
             <div class="ad-actions">
-              <button class="pickup-submit-btn btn-sm" (click)="editAd(ad.id)">Edit Ad</button>
-              <button class="chat-submit-btn btn-sm" (click)="activateAd(ad.id)">Activate Ad</button>
+              <button class="pickup-submit-btn btn-sm" (click)="editAd(ad.id)">Edit</button>
+              <!-- <button class="chat-submit-btn btn-sm" (click)="activateAd(ad.id)">Activate</button> -->
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-6 mx-auto card" style="background-color:#234575;border-radius: 30px;">
+      <div class="ad-list">
+        <h3 class="text-center" style="color: white;">Your Requests</h3>
+        <ul class="list-group" style="border-radius: 30px;">
+          <li class="list-group-item" *ngFor="let ads of userReqs"  style="background-color: #d3e5ff;">
+            <div class="ad-info">
+              <h5>{{ ads.postTitle }}</h5>
+              <p>{{ ads.postDiscription }}</p>
+            </div>
+            <div class="ad-actions">
+              <!-- <button class="pickup-submit-btn btn-sm" (click)="editAd(ad.id)">View</button> -->
+              <button class="cancel-submit-btn btn-sm" (click)="activateAd(ads.id)">Cancel</button>
             </div>
           </li>
         </ul>

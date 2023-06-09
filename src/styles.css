@@ -204,6 +204,24 @@ input[type=number] {
   position: relative;
   bottom: 5px;
 }
+.cancel-submit-btn{
+  width: 30%;
+  height: 57.69px;
+  background: #b12525;
+  border-radius: 7.21127px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14.4225px;
+  line-height: 17px;
+  color: #FFFFFF;
+  margin-top: 25px;
+  /* margin-left: 90px; */
+  float: right;
+  outline: none;
+  border: none;
+  position: relative;
+  bottom: 5px;
+}
 .view-submit-btn{
   width: 30%;
   height: 57.69px;

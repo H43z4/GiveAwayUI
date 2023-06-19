@@ -34,11 +34,10 @@
         <form action="javascript:;" class="auth-forms w-100" autocomplete="off" [formGroup]="regForm"
           (ngSubmit)="submit()">
           <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6">
               <div class="form-floating">
                 <label for="userType">User Type *</label>
-                <select class="form-control form-select" formControlName="userType"
-                  [(ngModel)]="selectedItemType">
+                <select class="form-control form-select" formControlName="userType" (change)="checkUIDValidator()" [(ngModel)]="selectedItemType">
                   <option value="">Please Select User Type</option>
                   <option value="1">Individual</option>
                   <option value="2">Organization</option>
@@ -49,17 +48,16 @@
                   required.</div>
               </div>
             </div>
-            <!-- <div class="col-md-6" style="display: none;">
+            <div class="col-md-6" *ngIf="selectedItemType ==='2'">
               <div class="form-floating">
-                <label for="uniqueId">Unique ID</label>
-                <input type="text" class="form-control" formControlName="uniqueId" id="uniqueId" value="aaaa1111111" placeholder="Unique ID"
-                  maxlength="50">
+                <label for="uniqueId">Unique ID *</label>
+                <input type="text" class="form-control" formControlName="uniqueId" id="uniqueId"
+                  placeholder="Unique ID" maxlength="50">
               </div>
-              <div *ngIf="f['uniqueId'].touched && f['uniqueId'].invalid" class="alert alert-danger p-1 mb-0">
-                <div *ngIf="f['uniqueId'].errors && f['uniqueId'].errors['required']">Unique ID is
-                  required.</div>
+              <div *ngIf="f['uniqueId'].touched && f['uniqueId'].invalid  && selectedItemType ==='2'" class="alert alert-danger p-1 mb-0">
+                Unique ID is required.
               </div>
-            </div> -->
+            </div>
           </div>
           <div class="row">
             <div class="col-md-6">
@@ -154,7 +152,7 @@
               </div>
             </div>
           </div>
-          <button [disabled]="regForm.invalid" type="submit" class="reg-submit-btn">Register <span
+          <button type="submit" class="reg-submit-btn">Register <span
               class="submit-btn-icon"><img src="../../assets/next.png" alt=""></span></button>
         </form>
         <div class="maker">

@@ -22,6 +22,13 @@ export class ChatManagementService {
       headers,
     });
   }
+  PickupRequest(formData: FormData) {
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'multipart/form-data');
+    return this.http.post<generalResponse>(`${environment.apiUrl}/Review/ReviewRequest`, formData, {
+      headers,
+    });
+  }
   PostMassege(formData: FormData) {
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'multipart/form-data');

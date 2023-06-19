@@ -104,6 +104,38 @@ export class ItemDetailComponent implements OnInit {
     sessionStorage.setItem('postId', this.postId.toString());
     this.router.navigateByUrl('/master/chats');
   }
+  PickupRequest() {
+    debugger;
+    this.spinner.show();
+    if (this.postsList.userId <= 0 && !this.postsList.id) {
+      this.spinner.hide();
+      this.toastrService.error('No data found!', 'Error!');
+      return;
+    }
+    const formData: FormData = new FormData();
+    formData.append('PostId', String(this.postsList.id));
+    formData.append('ReceverUserId', String(this.postsList.userId));
+    this.chatService.PickupRequest(formData).subscribe(
+      (result) => {
+        if (result?.status == '0') {
+          this.spinner.hide();
+          this.toastrService.success('Request sent successfully!', 'Success!');
+          sessionStorage.setItem('postId', this.postId.toString());
+          // this.router.navigateByUrl('/master/chats');
+        } else {
+          this.spinner.hide();
+          this.toastrService.error(result.message, 'Error!');
+        }
+      },
+      (error) => {
+        this.spinner.hide();
+        this.toastrService.error(error, 'Error!');
+      },
+      () => {
+        this.spinner.hide();
+      }
+    );
+  }
   ManageChatBox() {
     debugger;
     this.spinner.show();

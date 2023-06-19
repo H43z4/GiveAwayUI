@@ -50,4 +50,10 @@ export class PostManagementService {
   GetUserById() {
     return this.http.get<generalResponse>(`${environment.apiUrl}/Post/GetUserByIdWithPosts`);
   }
+  GetUserApprovals() {
+    return this.http.get<generalResponse>(`${environment.apiUrl}/Review/GetUserReviwToApprove`);
+  }
+  GetUserRequests() {
+    return this.http.get<generalResponse>(`${environment.apiUrl}/Review/GetUserReviwRequested`);
+  }
 }

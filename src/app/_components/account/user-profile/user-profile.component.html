@@ -31,15 +31,17 @@
   <div class="row mt-5" style="width: 1240px;">
     <div class="col-md-6 mx-auto card"  style="background-color:#237574;border-radius: 30px;">
       <div class="ad-list">
-        <h3 class="text-center" style="color: white;">Your Donations</h3>
+        <h3 class="text-center" style="color: white;">Donations Approval</h3>
         <ul class="list-group" style="border-radius: 30px;">
           <li class="list-group-item" *ngFor="let ad of userAds" style="background-color: #cafffe;">
             <div class="ad-info">
-              <h5>{{ ad.postTitle }}</h5>
-              <p>{{ ad.postDiscription }}</p>
+              <h5 class="lead">Title: {{ ad.post.postTitle }}</h5>
+              <p class="lead">Description: {{ ad.post.postDiscription }}</p>
+              <h6 class="lead">Requested by: {{ ad.senderUserName }}</h6>
             </div>
             <div class="ad-actions">
-              <button class="pickup-submit-btn btn-sm" (click)="editAd(ad.id)">Edit</button>
+              <button class="pickup-submit-btn btn-sm ml-2">Approve</button>
+              <button class="cancel-submit-btn btn-sm">Reject</button>
               <!-- <button class="chat-submit-btn btn-sm" (click)="activateAd(ad.id)">Activate</button> -->
             </div>
           </li>
@@ -48,12 +50,13 @@
     </div>
     <div class="col-md-6 mx-auto card" style="background-color:#234575;border-radius: 30px;">
       <div class="ad-list">
-        <h3 class="text-center" style="color: white;">Your Requests</h3>
+        <h3 class="text-center" style="color: white;">Donations Requested</h3>
         <ul class="list-group" style="border-radius: 30px;">
           <li class="list-group-item" *ngFor="let ads of userReqs"  style="background-color: #d3e5ff;">
             <div class="ad-info">
-              <h5>{{ ads.postTitle }}</h5>
-              <p>{{ ads.postDiscription }}</p>
+              <h5 class="lead">Title: {{ ads.post.postTitle }}</h5>
+              <p class="lead">Description: {{ ads.post.postDiscription }}</p>
+              <h6 class="lead">Requested to: {{ ads.receverUserName }}</h6>
             </div>
             <div class="ad-actions">
               <!-- <button class="pickup-submit-btn btn-sm" (click)="editAd(ad.id)">View</button> -->

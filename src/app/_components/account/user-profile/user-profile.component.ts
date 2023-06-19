@@ -47,6 +47,80 @@ export class UserProfileComponent implements OnInit {
     // Implement activate ad logic for the specified ad ID
   }
 
+  GetUserApprovals() {
+    this.spinner.show();
+    debugger;
+    this.postManagementService
+      .GetUserApprovals()
+      .pipe(first())
+      .subscribe(
+        (result) => {
+          debugger;
+          console.log(result);
+          if (result?.status == '0') {
+            if (result?.data) {
+              if (result.data) {
+                // this.postsList = [];
+                this.userAds = result.data;
+                // this.userReqs = result.data.reqPosts;
+              }
+            }
+
+            this.spinner.hide();
+          } else {
+            this.spinner.hide();
+            this.toastrService.error(
+              result?.message || 'Bad request',
+              'Error!'
+            );
+          }
+        },
+        (error) => {
+          this.spinner.hide();
+          this.toastrService.error(error, 'Error!');
+        },
+        () => {
+          this.spinner.hide();
+        }
+      );
+  }
+  GetUserRequests() {
+    this.spinner.show();
+    debugger;
+    this.postManagementService
+      .GetUserRequests()
+      .pipe(first())
+      .subscribe(
+        (result) => {
+          debugger;
+          console.log(result);
+          if (result?.status == '0') {
+            if (result?.data) {
+              if (result.data) {
+                // this.postsList = [];
+                // this.userAds = result.data.posts;
+                this.userReqs = result.data;
+              }
+            }
+
+            this.spinner.hide();
+          } else {
+            this.spinner.hide();
+            this.toastrService.error(
+              result?.message || 'Bad request',
+              'Error!'
+            );
+          }
+        },
+        (error) => {
+          this.spinner.hide();
+          this.toastrService.error(error, 'Error!');
+        },
+        () => {
+          this.spinner.hide();
+        }
+      );
+  }
   GetUserDetails() {
     this.spinner.show();
     debugger;
@@ -64,8 +138,8 @@ export class UserProfileComponent implements OnInit {
                 this.userName = result.data.fullName;
                 this.userEmail = result.data.email;
                 this.userLocation = result.data.address;
-                this.userAds = result.data.posts;
-                this.userReqs = result.data.reqPosts;
+                // this.userAds = result.data.posts;
+                // this.userReqs = result.data.reqPosts;
               }
             }
 
@@ -90,6 +164,8 @@ export class UserProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.GetUserDetails();
+    this.GetUserApprovals();
+    this.GetUserRequests();
   }
 
 }
